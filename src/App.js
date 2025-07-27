@@ -1,25 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
-
+import React from "react";
+import { NavbarWithMegaMenu } from './components/pages/Navbar/Navbar';
+import { CarouselCustomNavigation } from './components/pages/Slider/Slider';
+import { CardDefault } from './components/pages/Card/Card';
+import SliderWithContent from './components/pages/SideSlideContent/SlideContent';
+import { DefaultStepper } from './components/pages/StepperImg/Stepper';
+import { FooterWithSitemap } from './components/pages/Footer/Footer';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+ 
+<NavbarWithMegaMenu/>
+<CarouselCustomNavigation/>
+<CardDefault/>
+<SliderWithContent/>
+<DefaultStepper/>
+<FooterWithSitemap/>
+  </>
   );
-}
+}     
 
 export default App;
