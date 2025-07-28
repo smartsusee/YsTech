@@ -28,52 +28,62 @@ import {
   TagIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
  
 const navListMenuItems = [
   {
     title: "Products",
     description: "Find the perfect solution for your needs.",
     icon: SquaresPlusIcon,
+    path: "/products",
   },
   {
     title: "About Us",
     description: "Meet and learn about our dedication",
     icon: UserGroupIcon,
+    path: "/about-us",
   },
   {
     title: "Blog",
     description: "Find the perfect solution for your needs.",
     icon: Bars4Icon,
+    path: "/blog",
   },
   {
     title: "Services",
     description: "Learn how we can help you achieve your goals.",
     icon: SunIcon,
+    path: "/services",
   },
   {
     title: "Support",
     description: "Reach out to us for assistance or inquiries",
     icon: GlobeAmericasIcon,
+    path: "/support",
   },
   {
     title: "Contact",
     description: "Find the perfect solution for your needs.",
     icon: PhoneIcon,
+    path: "/contact",
   },
   {
     title: "News",
     description: "Read insightful articles, tips, and expert opinions.",
     icon: NewspaperIcon,
+    path: "/news",
   },
   {
     title: "Products",
     description: "Find the perfect solution for your needs.",
     icon: RectangleGroupIcon,
+    path: "/products",
   },
   {
     title: "Special Offers",
     description: "Explore limited-time deals and bundles",
     icon: TagIcon,
+    path: "/special-offers",
   },
 ];
  
@@ -81,8 +91,8 @@ function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const renderItems = navListMenuItems.map(
-    ({ icon, title, description }, key) => (
-      <a href="#" key={key}>
+    ({ icon, title, description,path }, key) => (
+      <Link to={path} key={key}>
         <MenuItem className="flex items-center gap-3 rounded-lg">
           <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2 ">
             {" "}
@@ -107,7 +117,7 @@ function NavListMenu() {
             </Typography>
           </div>
         </MenuItem>
-      </a>
+      </Link>
     ),
   );
  
