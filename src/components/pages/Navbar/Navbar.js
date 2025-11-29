@@ -28,7 +28,7 @@ import {
   TagIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/solid";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const navListMenuItems = [
   {
@@ -167,6 +167,10 @@ function NavListMenu() {
 }
 
 function NavList() {
+
+  console.log(window);
+  
+  const navigate = useNavigate();
   return (
     <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
       <Typography
@@ -176,7 +180,14 @@ function NavList() {
         color="blue-gray"
         className="font-medium"
       >
-        <ListItem className="flex items-center gap-2 py-2 pr-4">Home</ListItem>
+        <ListItem
+          className="flex items-center gap-2 py-2 pr-4"
+          onClick={() => {
+            navigate("/", true);
+          }}
+        >
+          Home
+        </ListItem>
       </Typography>
       <NavListMenu />
       <Typography
@@ -204,6 +215,7 @@ export function NavbarWithMegaMenu() {
     );
   }, []);
 
+  const navigate = useNavigate();
   return (
     <div className="bg-white sticky top-0 z-50 shadow-sm navbardata">
       {" "}
@@ -224,15 +236,24 @@ export function NavbarWithMegaMenu() {
             <NavList />
           </div>
           <div className="hidden gap-2 lg:flex">
-            <Button variant="text" size="sm" color="blue-gray">
-              contact Us
+            <Button
+              variant="gradient"
+              size="sm"
+              color="blue-gray"
+              onClick={() => {
+                navigate("/intrestBox", true);
+              }}
+            >
+              Are you intrested?
             </Button>
             <Button
               variant="gradient"
               size="sm"
               onClick={() => {
-                window.location.href =
-                  "https://resumeportfoliosusee.netlify.app/";
+                window.open(
+                  "https://resumeportfoliosusee.netlify.app/",
+                  "_blank"
+                );
               }}
             >
               goto Site
@@ -254,11 +275,29 @@ export function NavbarWithMegaMenu() {
         <Collapse open={openNav}>
           <NavList />
           <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
-            <Button variant="outlined" size="sm" color="blue-gray" fullWidth>
-              Log In
+            <Button
+              variant="gradient"
+              size="sm"
+              color="blue-gray"
+              fullWidth
+              onClick={() => {
+                navigate("/intrestBox", true);
+              }}
+            >
+              Are you intrested?
             </Button>
-            <Button variant="gradient" size="sm" fullWidth>
-              Sign In
+            <Button
+              variant="gradient"
+              size="sm"
+              fullWidth
+              onClick={() => {
+                window.open(
+                  "https://resumeportfoliosusee.netlify.app/",
+                  "_blank"
+                );
+              }}
+            >
+              goto site
             </Button>
           </div>
         </Collapse>

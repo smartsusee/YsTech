@@ -6,20 +6,19 @@ import {
   CardFooter,
   Typography,
   Button,
-   Dialog,
+  Dialog,
   DialogHeader,
   DialogBody,
   DialogFooter,
 } from "@material-tailwind/react";
 
- export function DialogCustomAnimation(props) {
+export function DialogCustomAnimation(props) {
+  console.log(props.cardContent);
 
-    console.log(props.cardContent );
-    
   const [open, setOpen] = React.useState(false);
- 
+
   const handleOpen = () => setOpen(!open);
- 
+
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
@@ -34,10 +33,7 @@ import {
         }}
       >
         <DialogHeader>Its a simple modal.</DialogHeader>
-        <DialogBody>
-          {props.cardContent}
-          
-        </DialogBody>
+        <DialogBody>{props.cardContent}</DialogBody>
         <DialogFooter>
           <Button
             variant="text"
@@ -56,78 +52,82 @@ import {
   );
 }
 
- 
 export function CardDefault() {
-
-   let cardData =  [
-    {cardimg:"https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80", 
-      CardText:" UI/UX Review Check" ,cardContent:"  The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
-      id:1
-
-     },
-    {cardimg:"https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80", 
-      CardText:" UI/UX Review Check" ,cardContent:"  The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
-      id:2
-
-     },
-    {cardimg:"https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80", 
-      CardText:" UI/UX Review Check" ,cardContent:"  The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
-      id:3
-
-     },
-    {cardimg:"https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80", 
-      CardText:" UI/UX Review Check" ,cardContent:"  The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
-      id:4
-
-     },
-    {cardimg:"https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80", 
-      CardText:" UI/UX Review Check" ,cardContent:"  The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
-      id:5
-
-     },
-    {cardimg:"https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80", 
-      CardText:" UI/UX Review Check" ,cardContent:"  The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
-      id:6
-
-     },
-   
-    ]
+  let cardData = [
+    {
+      cardimg:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      CardText: " UI/UX Review Check",
+      cardContent:
+        "  The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
+      id: 1,
+    },
+    {
+      cardimg:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      CardText: " UI/UX Review Check",
+      cardContent:
+        "  The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
+      id: 2,
+    },
+    {
+      cardimg:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      CardText: " UI/UX Review Check",
+      cardContent:
+        "  The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
+      id: 3,
+    },
+    {
+      cardimg:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      CardText: " UI/UX Review Check",
+      cardContent:
+        "  The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
+      id: 4,
+    },
+    {
+      cardimg:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      CardText: " UI/UX Review Check",
+      cardContent:
+        "  The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
+      id: 5,
+    },
+    {
+      cardimg:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      CardText: " UI/UX Review Check",
+      cardContent:
+        "  The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
+      id: 6,
+    },
+  ];
   return (
-   <>
+    <>
       <div id="card">
-    {cardData && cardData?.map((item , ind  )=>{
+        {cardData &&
+          cardData?.map((item, ind) => {
+            let { CardText, cardContent, cardimg } = item;
 
-       let {CardText ,cardContent,cardimg} = item 
-
-   return(
-     <Card className="mt-6 w-50">
-      <CardHeader color="blue-gray" className="relative h-56">
-        <img
-          id="imgHover"
-          src={cardimg}
-          alt="card-image"
-        />
-      </CardHeader>
-      <CardBody>
-        <Typography variant="h5" color="blue-gray" className="mb-2">
-          {CardText}
-        </Typography>
-        <Typography>
-          {cardContent}
-        </Typography>
-      </CardBody>
-      <CardFooter className="pt-0">
-        <DialogCustomAnimation cardContent={cardContent}/>
-      </CardFooter>
-    </Card>
-   )
-
-
-    })
-
-    }
-   
+            return (
+              <Card className="mt-6 w-50" key={ind}>
+                <CardHeader color="blue-gray" className="relative h-56">
+                  <img id="imgHover" src={cardimg} alt="card-image" />
+                </CardHeader>
+                <CardBody>
+                  <Typography variant="h5" color="blue-gray" className="mb-2">
+                    {CardText}
+                  </Typography>
+                  <Typography>{cardContent}</Typography>
+                </CardBody>
+                <CardFooter className="pt-0">
+                  <DialogCustomAnimation cardContent={cardContent} />
+                </CardFooter>
+              </Card>
+            );
+          })}
       </div>
-   </>
+    </>
   );
 }
