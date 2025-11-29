@@ -54,7 +54,7 @@ export function FooterWithSitemap() {
             variant="small"
             className="mb-4 text-center font-normal text-gray-400 md:mb-0"
           >
-            &copy; {currentYear} <a href="#" className="text-white hover:text-gray-300">Your Company</a>. All
+            &copy; {currentYear} <a href="#" className="text-white hover:text-gray-300">YsTechnologies</a>. All
             Rights Reserved.
           </Typography>
           <div className="flex gap-4 text-gray-400 sm:justify-center">

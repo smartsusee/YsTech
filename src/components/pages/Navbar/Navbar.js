@@ -29,7 +29,7 @@ import {
   UserGroupIcon,
 } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
- 
+
 const navListMenuItems = [
   {
     title: "Products",
@@ -86,12 +86,12 @@ const navListMenuItems = [
     path: "/special-offers",
   },
 ];
- 
+
 function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const renderItems = navListMenuItems.map(
-    ({ icon, title, description,path }, key) => (
+    ({ icon, title, description, path }, key) => (
       <Link to={path} key={key}>
         <MenuItem className="flex items-center gap-3 rounded-lg">
           <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2 ">
@@ -118,9 +118,9 @@ function NavListMenu() {
           </div>
         </MenuItem>
       </Link>
-    ),
+    )
   );
- 
+
   return (
     <React.Fragment>
       <Menu
@@ -165,7 +165,7 @@ function NavListMenu() {
     </React.Fragment>
   );
 }
- 
+
 function NavList() {
   return (
     <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
@@ -193,20 +193,24 @@ function NavList() {
     </List>
   );
 }
- 
+
 export function NavbarWithMegaMenu() {
   const [openNav, setOpenNav] = React.useState(false);
- 
+
   React.useEffect(() => {
     window.addEventListener(
       "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false),
+      () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
- 
+
   return (
-    <div className="bg-white sticky top-0 z-50 shadow-sm navbardata"> {/* Added wrapper div */}
-      <Navbar className="mx-auto max-w-none rounded-none px-4 py-2"> {/* Changed max-w-screen-xl to max-w-none and added rounded-none */}
+    <div className="bg-white sticky top-0 z-50 shadow-sm navbardata">
+      {" "}
+      {/* Added wrapper div */}
+      <Navbar className="mx-auto max-w-none rounded-none px-4 py-2">
+        {" "}
+        {/* Changed max-w-screen-xl to max-w-none and added rounded-none */}
         <div className="flex items-center justify-between text-blue-gray-900">
           <Typography
             as="a"
@@ -221,10 +225,17 @@ export function NavbarWithMegaMenu() {
           </div>
           <div className="hidden gap-2 lg:flex">
             <Button variant="text" size="sm" color="blue-gray">
-              Log In
+              contact Us
             </Button>
-            <Button variant="gradient" size="sm">
-              Sign In
+            <Button
+              variant="gradient"
+              size="sm"
+              onClick={() => {
+                window.location.href =
+                  "https://resumeportfoliosusee.netlify.app/";
+              }}
+            >
+              goto Site
             </Button>
           </div>
           <IconButton
